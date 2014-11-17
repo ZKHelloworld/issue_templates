@@ -3,6 +3,7 @@ class IssueTemplatesController < ApplicationController
 
 
   def index
+    @project = Project.find(params[:project_id])
     @issueTemplates = IssueTemplate.all
   end
 
