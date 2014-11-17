@@ -2,7 +2,11 @@
 
 <% @issueTemplates.each do |t| %>
     <p>
+        <%= l(:issue_title) %>
         <%= t.title %>
+    </p>
+    <p>
+        <%= l(:issue_content) %>
         <%= t.content %>
     </p>
 <% end %>
