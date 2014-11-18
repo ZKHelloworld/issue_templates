@@ -2,5 +2,5 @@
 en:
   # my_label: "My label"
   issue_templates: 'Issue Templates'
-  issue_title: 'Issue Templates Title:'
-  issue_content: 'Issue Template Content:'
+  issue_title: 'Title:'
+  issue_content: 'Content:'

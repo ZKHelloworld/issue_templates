@@ -1,9 +1,10 @@
 class IssueTemplatesController < ApplicationController
-  #unloadable
+  unloadable
 
+  before_filter :find_project_by_project_id
+  before_filter :authorize, :only => :index
 
   def index
-    @project = Project.find(params[:project_id])
     @issueTemplates = IssueTemplate.all
   end
 
@@ -15,4 +16,7 @@ class IssueTemplatesController < ApplicationController
 
   #def delete
   #end
+
+  private
+
 end

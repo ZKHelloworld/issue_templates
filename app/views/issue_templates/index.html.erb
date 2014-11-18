@@ -1,12 +1,14 @@
-<h2>issueTemplates</h2>
+<h2><%= l(:issue_templates) %></h2>
 
-<% @issueTemplates.each do |t| %>
-    <p>
-        <%= l(:issue_title) %>
-        <%= t.title %>
-    </p>
-    <p>
-        <%= l(:issue_content) %>
-        <%= t.content %>
-    </p>
-<% end %>
+<div class="box tabular">
+    <div class="all_attributes">
+        <p>
+            <label><%= l(:issue_title) %></label>
+            <%= select_tag "issue_templates_select", options_for_select( @issueTemplates.collect{|t|[t.title,t.id]} ) %>
+        </p>
+        <p>
+            <label><%= l(:issue_content) %></label>
+            <%= text_area :issue_templates, :content , :cols => 60, :rows => 10, :no_label => true %>
+        </p>
+    </div>
+</div>
