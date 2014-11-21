@@ -4,7 +4,8 @@ class CreateIssueTemplates < ActiveRecord::Migration
       t.string :title
       t.string :content
       t.integer :project_id
-      t.integer :type #global or project
+      t.integer :scope #global or project
+      t.integer :type #create or changing status
     end
   end
 end

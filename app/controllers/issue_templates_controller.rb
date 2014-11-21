@@ -5,7 +5,7 @@ class IssueTemplatesController < ApplicationController
   before_filter :authorize, :only => :index
 
   def index
-    @issueTemplates = IssueTemplate.all
+    @issueTemplates = IssueTemplate.all :project_id => @project, :scope => 1
   end
 
   #def new

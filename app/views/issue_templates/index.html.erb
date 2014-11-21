@@ -8,6 +8,10 @@
         </p>
         <p>
             <label><%= l(:issue_content) %></label>
+            <%= select_tag "issue_templates_select", options_for_select( @issueTemplates.collect{|t|[t.title,t.id]} ) %>
+        </p>
+        <p>
+            <label><%= l(:issue_content) %></label>
             <%= text_area :issue_templates, :content , :cols => 60, :rows => 10, :no_label => true %>
         </p>
     </div>
