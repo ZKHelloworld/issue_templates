@@ -3,15 +3,15 @@
 <div class="box tabular">
     <div class="all_attributes">
         <p>
-            <label><%= l(:issue_title) %></label>
+            <label><%= l(:issue_template_title) %></label>
             <%= select_tag "issue_templates_select", options_for_select( @issueTemplates.collect{|t|[t.title,t.id]} ) %>
         </p>
         <p>
-            <label><%= l(:issue_content) %></label>
+            <label><%= l(:issue_template_content) %></label>
             <%= select_tag "issue_templates_select", options_for_select( @issueTemplates.collect{|t|[t.title,t.id]} ) %>
         </p>
         <p>
-            <label><%= l(:issue_content) %></label>
+            <label><%= l(:issue_template_content) %></label>
             <%= text_area :issue_templates, :content , :cols => 60, :rows => 10, :no_label => true %>
         </p>
     </div>

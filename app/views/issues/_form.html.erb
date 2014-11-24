@@ -21,10 +21,22 @@
 <p><%= f.text_field :subject, :size => 80, :maxlength => 255, :required => true %></p>
 <% end %>
 
+<% content_for :header_tags do %>
+    <%= stylesheet_link_tag 'application', :plugin => 'issue_templates' %>
+<% end %>
+<% content_for :header_tags do %>
+    <%= javascript_include_tag 'application', :plugin => 'issue_templates' %>
+<% end %>
 <p>
     <label><%= l(:issue_templates) %></label>
-    <%= select_tag "issue_templates_select", options_for_select( @issue.all_templates(@issue.project_id).collect{|t|[t.title,t.id]} ) %>
+    <%= select_tag "issue_templates_select", options_for_select( @issue.all_templates.collect{|t|[t.title,t.id]} ) %>
+    <a id="issue_template_insert"><%= l(:issue_template_insert) %></a>
 </p>
+<ul class="hide">
+    <% @issue.all_templates.each do |t| %>
+        <li id="template_content_<%=t.id%>"><%= t.content %></li>
+    <% end %>
+</ul>
 
 <% if @issue.safe_attribute? 'description' %>
 <p>

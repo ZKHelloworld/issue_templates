@@ -1,0 +1,7 @@
+.hide {
+    display: none;
+}
+
+#issue_template_insert {
+    cursor: pointer;
+}

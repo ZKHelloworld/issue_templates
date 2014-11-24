@@ -1,4 +1,5 @@
 zh:
   issue_templates: 'Issue 模板'
-  issue_title: '模板标题：'
-  issue_content: '模板内容：'
+  issue_template_title: '模板标题：'
+  issue_template_content: '模板内容：'
+  issue_template_insert: '插入模板'

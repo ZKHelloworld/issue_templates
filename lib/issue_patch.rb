@@ -8,7 +8,7 @@ module IssueTemplates
 
     # Same as typing in the class
     base.class_eval do
-      unloadable # Send unloadable so it will not be unloaded in development
+      unloadable
       belongs_to :deliverable
     end
   end
@@ -19,8 +19,8 @@ module IssueTemplates
   module InstanceMethods
     # Wraps the association to get the Deliverable subject.  Needed for the
     # Query and filtering
-    def all_templates(project_id)
-      IssueTemplate.all_templates(project_id)
+    def all_templates
+      IssueTemplate.all_templates(@project_id)
     end
   end
 
