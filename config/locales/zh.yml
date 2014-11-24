@@ -1,15 +1,17 @@
 zh:
   issue_templates: 'Issue 模板'
-  template_title: '模板标题：'
-  template_content: '模板内容：'
+  template_title: '模板标题'
+  template_content: '模板内容'
   template_insert_button: '插入模板'
   template_new_button: '新建'
   template_edit_button: '编辑'
   template_delete_button: '删除'
 
   issue_template_new: '新建 Issue 模板'
-  global_template: '新建为全局模板：'
+  global_template_new: '新建为全局模板'
   template_back_button: '返回'
 
   issue_template_edit: '编辑 Issue 模板'
-  issue_template_saved: 'Issue 模板新建成功'
+  global_template_edit: '编辑为全局模板'
+
+  issue_template_created: 'Issue 模板新建成功'

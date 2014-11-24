@@ -12,15 +12,15 @@
         <%= form_for :template, :url => { :controller => :issue_templates, :action => 'new', :project_id => @project_id } do |f| %>
             <p>
                 <label><%= l(:template_title) %></label>
-                <%= f.text_field :title %>
+                <%= f.text_field :title, :required => true %>
             </p>
             <p>
-                <label><%= l(:global_template) %></label>
+                <label><%= l(:global_template_new) %></label>
                 <%= f.check_box :scope %>
             </p>
             <p>
                 <label><%= l(:template_content) %></label>
-                <%= f.text_area :content , :cols => 60, :rows => 10, :no_label => true %>
+                <%= f.text_area :content , :required => true, :cols => 60, :rows => 10, :no_label => true %>
             </p>
             <p>
                 <%= f.submit l(:template_new_button) %>
@@ -29,5 +29,3 @@
         <% end %>
     </div>
 </div>
-
-

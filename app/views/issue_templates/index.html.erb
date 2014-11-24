@@ -12,7 +12,7 @@
         <%= form_for :issue_templates, :url => { :action => 'edit' } do |f| %>
             <p>
                 <label><%= l(:template_title) %></label>
-                <%= select_tag "templates_edit_select", options_for_select( @all_templates.collect{|t|[t.title,t.id]} ) %>
+                <%= select_tag "issue_templates_select", options_for_select( @all_templates.collect{|t|[t.title,t.id]} ) %>
                 <%= link_to l(:template_edit_button), :controller => :issue_templates, :action => :edit, :project_id => @project_id %>
                 <%= link_to l(:template_new_button), :controller => :issue_templates, :action => :new, :project_id => @project_id %>
                 <a id="template_delete_button"><%= l(:template_delete_button)%></a>

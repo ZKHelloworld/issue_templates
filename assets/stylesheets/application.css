@@ -2,6 +2,7 @@
     display: none;
 }
 
-#issue_template_insert {
+#issue_template_insert,
+#template_delete_button {
     cursor: pointer;
 }

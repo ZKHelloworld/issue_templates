@@ -2,8 +2,8 @@
 en:
   #index
   issue_templates: 'Issue Templates'
-  template_title: 'Title:'
-  template_content: 'Content:'
+  template_title: 'Title'
+  template_content: 'Content'
   template_insert_button: 'Insert Template'
   template_new_button: 'Create'
   template_edit_button: 'Edit'
@@ -11,11 +11,12 @@ en:
 
   #new
   issue_template_new: 'Create Issue Template'
-  global_template: 'Create as Global Template:'
+  global_template_new: 'Create as Global Template'
   template_back_button: 'Back'
 
   #edit
   issue_template_edit: 'Edit Issue Template'
+  global_template_edit: 'Edit as Global Template'
 
   #flash tip
   issue_template_created: 'Iusse template created'

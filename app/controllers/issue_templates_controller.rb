@@ -2,7 +2,7 @@ class IssueTemplatesController < ApplicationController
   unloadable
 
   before_filter :find_project_by_project_id
-  before_filter :authorize, :only => [:index, :new]
+  before_filter :authorize, :only => [:index, :new, :delete]
 
   def index
     @all_templates = IssueTemplate.all_templates(params[:project_id])
@@ -27,11 +27,15 @@ class IssueTemplatesController < ApplicationController
     end
   end
 
-  #def edit
-  #end
+  def edit
+  end
 
-  #def delete
-  #end
+  def delete
+    id = params[:id]
+    puts '----------------------------------------'
+    puts id
+    puts '----------------------------------------'
+  end
 
   private
 

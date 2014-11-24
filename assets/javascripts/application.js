@@ -21,13 +21,20 @@ $(function($) {
     });
 
     // edit current template
-    $('#templates_edit_select').change(function() {
+    $('#issue_templates_select').change(function() {
         var id = $(this).val();
         var content = $('#template_content_' + id).text();
 
         // origin editor
-        $('#issue_template_content').text(content);
+        $('#issue_templates_content').val(content);
         // ckeditor
 
     }).change();
+
+    // delete current template
+    $('#template_delete_button').click(function() {
+        var id = $('#issue_templates_select').val();
+
+        $.post('/issue_templates/delete?id=' + id);
+    });
 });
