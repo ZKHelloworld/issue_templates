@@ -33,8 +33,8 @@ $(function($) {
 
     // delete current template
     $('#template_delete_button').click(function() {
-        var id = $('#issue_templates_select').val();
+        //var id = $('#issue_templates_select').val();
 
-        $.post('/issue_templates/delete?id=' + id);
+        //$.post('/issue_templates/delete?id=' + id);
     });
 });

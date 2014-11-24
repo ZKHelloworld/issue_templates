@@ -13,8 +13,8 @@
             <p>
                 <label><%= l(:template_title) %></label>
                 <%= select_tag "issue_templates_select", options_for_select( @all_templates.collect{|t|[t.title,t.id]} ) %>
-                <%= link_to l(:template_edit_button), :controller => :issue_templates, :action => :edit, :project_id => @project_id %>
-                <%= link_to l(:template_new_button), :controller => :issue_templates, :action => :new, :project_id => @project_id %>
+                <%= link_to l(:template_edit_button), :controller => :issue_templates, :action => :edit %>
+                <%= link_to l(:template_new_button), :controller => :issue_templates, :action => :new %>
                 <a id="template_delete_button"><%= l(:template_delete_button)%></a>
             </p>
             <ol class="hide">

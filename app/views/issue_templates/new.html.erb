@@ -9,14 +9,14 @@
 
 <div class="box tabular">
     <div class="all_attributes">
-        <%= form_for :template, :url => { :controller => :issue_templates, :action => 'new', :project_id => @project_id } do |f| %>
+        <%= form_for :template, :url => { :controller => :issue_templates, :action => 'new' } do |f| %>
             <p>
                 <label><%= l(:template_title) %></label>
                 <%= f.text_field :title, :required => true %>
             </p>
             <p>
                 <label><%= l(:global_template_new) %></label>
-                <%= f.check_box :scope %>
+                <%= f.check_box :global %>
             </p>
             <p>
                 <label><%= l(:template_content) %></label>
@@ -24,7 +24,7 @@
             </p>
             <p>
                 <%= f.submit l(:template_new_button) %>
-                <%= link_to l(:template_back_button), :controller => :issue_templates, :action => 'index', :project_id => @project_id %>
+                <%= link_to l(:template_back_button), :controller => :issue_templates, :action => 'index' %>
             </p>
         <% end %>
     </div>

@@ -1,15 +1,14 @@
 class IssueTemplate < ActiveRecord::Base
   unloadable
 
-  def self.scopes
-    return [:global, :project]
-  end
+  validates :title, :presence => true
+  validates :content, :presence => true
 
-  def self.all_templates(project_id)
-    global = IssueTemplate.find_all_by_scope(0)
-    project = IssueTemplate.find_all_by_project_id(project_id, :conditions => 'scope = 1')
+  def self.all_templates(project)
+    global = IssueTemplate.find_all_by_global(1)
+    project = IssueTemplate.find_all_by_project(project, :conditions => 'global = 0')
 
-    return global + project
+    return project + global
   end
 
 end
