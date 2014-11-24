@@ -1,7 +1,21 @@
 # English strings go here for Rails i18n
 en:
-  # my_label: "My label"
+  #index
   issue_templates: 'Issue Templates'
-  issue_template_title: 'Title:'
-  issue_template_content: 'Content:'
-  issue_template_insert: 'Insert template'
+  template_title: 'Title:'
+  template_content: 'Content:'
+  template_insert_button: 'Insert Template'
+  template_new_button: 'Create'
+  template_edit_button: 'Edit'
+  template_delete_button: 'Delete'
+
+  #new
+  issue_template_new: 'Create Issue Template'
+  global_template: 'Create as Global Template:'
+  template_back_button: 'Back'
+
+  #edit
+  issue_template_edit: 'Edit Issue Template'
+
+  #flash tip
+  issue_template_created: 'Iusse template created'

@@ -1,18 +1,31 @@
+<% content_for :header_tags do %>
+    <%= stylesheet_link_tag 'application', :plugin => 'issue_templates' %>
+<% end %>
+<% content_for :header_tags do %>
+    <%= javascript_include_tag 'application', :plugin => 'issue_templates' %>
+<% end %>
+
 <h2><%= l(:issue_templates) %></h2>
 
 <div class="box tabular">
     <div class="all_attributes">
-        <p>
-            <label><%= l(:issue_template_title) %></label>
-            <%= select_tag "issue_templates_select", options_for_select( @issueTemplates.collect{|t|[t.title,t.id]} ) %>
-        </p>
-        <p>
-            <label><%= l(:issue_template_content) %></label>
-            <%= select_tag "issue_templates_select", options_for_select( @issueTemplates.collect{|t|[t.title,t.id]} ) %>
-        </p>
-        <p>
-            <label><%= l(:issue_template_content) %></label>
-            <%= text_area :issue_templates, :content , :cols => 60, :rows => 10, :no_label => true %>
-        </p>
+        <%= form_for :issue_templates, :url => { :action => 'edit' } do |f| %>
+            <p>
+                <label><%= l(:template_title) %></label>
+                <%= select_tag "templates_edit_select", options_for_select( @all_templates.collect{|t|[t.title,t.id]} ) %>
+                <%= link_to l(:template_edit_button), :controller => :issue_templates, :action => :edit, :project_id => @project_id %>
+                <%= link_to l(:template_new_button), :controller => :issue_templates, :action => :new, :project_id => @project_id %>
+                <a id="template_delete_button"><%= l(:template_delete_button)%></a>
+            </p>
+            <ol class="hide">
+                <% @all_templates.each do |t| %>
+                    <li id="template_content_<%=t.id%>"><%=t.content%></li>
+                <% end %>
+            </ol>
+            <p>
+                <label><%= l(:template_content) %></label>
+                <%= f.text_area :content , :cols => 60, :rows => 10, :no_label => true %>
+            </p>
+        <% end %>
     </div>
 </div>

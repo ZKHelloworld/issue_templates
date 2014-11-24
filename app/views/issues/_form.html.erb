@@ -29,8 +29,8 @@
 <% end %>
 <p>
     <label><%= l(:issue_templates) %></label>
-    <%= select_tag "issue_templates_select", options_for_select( @issue.all_templates.collect{|t|[t.title,t.id]} ) %>
-    <a id="issue_template_insert"><%= l(:issue_template_insert) %></a>
+    <%= select_tag "templates_insert_select", options_for_select( @issue.all_templates.collect{|t|[t.title,t.id]} ) %>
+    <a id="template_insert_button"><%= l(:template_insert_button) %></a>
 </p>
 <ul class="hide">
     <% @issue.all_templates.each do |t| %>

@@ -12,8 +12,4 @@ class IssueTemplate < ActiveRecord::Base
     return global + project
   end
 
-  def current_scope(id)
-    return IssueTemplate.find(:id => id).scope
-  end
-
 end

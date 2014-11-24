@@ -1,8 +1,9 @@
 $(function($) {
     'use strict';
 
-    $('#issue_template_insert').click(function() {
-        var id = $('#issue_templates_select').val();
+    // new issue insert template
+    $('#template_insert_button').click(function() {
+        var id = $('#templates_insert_select').val();
         var template = $('#template_content_' + id).text();
         var origin = $('#issue_description').val();
 
@@ -18,4 +19,15 @@ $(function($) {
             }
         } catch (e) {}
     });
+
+    // edit current template
+    $('#templates_edit_select').change(function() {
+        var id = $(this).val();
+        var content = $('#template_content_' + id).text();
+
+        // origin editor
+        $('#issue_template_content').text(content);
+        // ckeditor
+
+    }).change();
 });
