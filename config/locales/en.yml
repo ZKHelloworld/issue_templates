@@ -20,3 +20,10 @@ en:
 
   #flash tip
   issue_template_created: 'Iusse template created'
+  issue_template_deleted: 'Issue template deleted'
+  issue_template_edited: 'Issue template edited'
+  issue_template_create_fail: 'Iusse template create fail'
+  issue_template_delete_fail: 'Issue template delete fail'
+  issue_template_edit_fail: 'Issue template edit fail'
+
+  issue_template_save: 'save'

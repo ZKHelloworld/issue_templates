@@ -18,16 +18,36 @@ class IssueTemplatesController < ApplicationController
 
       if template.save
         flash[:notice] = l(:issue_template_created)
-        redirect_to :action => 'index'
+      else
+        flash[:error] = l(:issue_template_create_fail)
       end
+      redirect_to :action => 'index'
     end
   end
 
   def edit
+    id = params[:issue_templates][:select]
+    template = IssueTemplate.find(id)
+
+    template.content = params[:issue_templates][:content]
+
+    if template.save
+        flash[:notice] = l(:issue_template_edited)
+    else
+        flash[:error] = l(:issue_template_edit_fail)
+    end
+    redirect_to :action => 'index'
   end
 
   def delete
-    id = params[:id]
+    id = params[:template]
+    template = IssueTemplate.find(id)
+
+    if template.delete
+        flash[:notice] = l(:issue_template_deleted)
+    else
+        flash[:error] = l(:issue_template_delete_fail)
+    end
   end
 
   private

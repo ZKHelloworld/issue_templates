@@ -33,8 +33,12 @@ $(function($) {
 
     // delete current template
     $('#template_delete_button').click(function() {
-        //var id = $('#issue_templates_select').val();
+        var id = $('#issue_templates_select').val();
 
-        //$.post('/issue_templates/delete?id=' + id);
+        if (confirm('Are you sure?')) {
+            $.get(window.location.pathname + '/delete/' + id, function() {
+                window.location.reload();
+            });
+        }
     });
 });

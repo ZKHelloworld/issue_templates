@@ -1,8 +1,8 @@
 require_dependency 'issue_patch'
 
 Redmine::Plugin.register :issue_templates do
-  name 'issue_templates plugin'
-  author 'Author name'
+  name 'issue_templates'
+  author 'Zheng Kenghong'
   description 'Redmine Issue Templates'
   version '0.0.1'
   url 'https://github.com/ZKHelloworld/issue_templates'

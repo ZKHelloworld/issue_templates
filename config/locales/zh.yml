@@ -15,3 +15,11 @@ zh:
   global_template_edit: '编辑为全局模板'
 
   issue_template_created: 'Issue 模板新建成功'
+  issue_template_deleted: 'Issue 模板删除成功'
+  issue_template_edited: 'Issue 模板编辑成功'
+  issue_template_create_fail: 'Issue 模板新建失败'
+  issue_template_delete_fail: 'Issue 模板删除失败'
+  issue_template_edit_fail: 'Issue 模板编辑失败'
+  issue_template_no_id: '未指定 Issue 模板'
+
+  issue_template_save: '保存'
