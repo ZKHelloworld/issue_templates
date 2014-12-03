@@ -2,12 +2,12 @@ class IssueTemplatesController < ApplicationController
   unloadable
 
   def index
-    @project = Project.find_by_name params[:id]
+    @project = Project.find_by_identifier params[:id]
     @all_templates = IssueTemplate.all_templates params[:id]
   end
 
   def new
-    @project = Project.find_by_name params[:id]
+    @project = Project.find_by_identifier params[:id]
 
     if request.post?
       template = IssueTemplate.create
