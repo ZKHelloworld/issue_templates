@@ -19,8 +19,8 @@ module IssueTemplates
   module InstanceMethods
     # Wraps the association to get the Deliverable subject.  Needed for the
     # Query and filtering
-    def all_templates(project)
-      IssueTemplate.all_templates project
+    def templates(project)
+      IssueTemplate.templates project
     end
   end
 

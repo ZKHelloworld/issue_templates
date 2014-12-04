@@ -1,3 +1,7 @@
+<% if RedmineCkeditor.enabled? %>
+    <p>ok</p>
+<% end %>
+
 <% content_for :header_tags do %>
     <%= stylesheet_link_tag 'application', :plugin => 'issue_templates' %>
 <% end %>
@@ -12,12 +16,12 @@
         <%= form_for :issue_templates, :url => { :action => 'edit' } do |f| %>
             <p>
                 <label><%= l(:template_title) %></label>
-                <%= f.select "select", options_for_select( @all_templates.collect{|t|[t.title,t.id]} ) %>
+                <%= f.select "select", options_for_select( @templates.collect{|t|[t.title,t.id]} ) %>
                 <%= link_to l(:template_new_button), :controller => :issue_templates, :action => :new %>
                 <a id="template_delete_button"><%= l(:template_delete_button)%></a>
             </p>
             <ol class="hide">
-                <% @all_templates.each do |t| %>
+                <% @templates.each do |t| %>
                     <li id="template_content_<%=t.id%>"><%=t.content%></li>
                 <% end %>
             </ol>

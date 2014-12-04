@@ -3,7 +3,7 @@ class IssueTemplatesController < ApplicationController
 
   def index
     @project = Project.find_by_identifier params[:id]
-    @all_templates = IssueTemplate.all_templates params[:id]
+    @templates = IssueTemplate.templates params[:id]
   end
 
   def new
