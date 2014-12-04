@@ -29,11 +29,11 @@
 <% end %>
 <p>
     <label><%= l(:issue_templates) %></label>
-    <%= select_tag "templates_insert_select", options_for_select( @issue.templates(@project.name).collect{|t|[t.title,t.id]} ) %>
+    <%= select_tag "templates_insert_select", options_for_select( @issue.templates(@project.identifier).collect{|t|[t.title,t.id]} ) %>
     <a id="template_insert_button"><%= l(:template_insert_button) %></a>
 </p>
 <ul class="hide">
-    <% @issue.templates(@project.name).each do |t| %>
+    <% @issue.templates(@project.identifier).each do |t| %>
         <li id="template_content_<%=t.id%>"><%= t.content %></li>
     <% end %>
 </ul>
