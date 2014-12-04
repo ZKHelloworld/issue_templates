@@ -7,25 +7,28 @@ $(function($) {
         var template = $('#template_content_' + id).text();
         var origin;
 
-        // description
-        origin = $('#issue_description').val();
-        origin += origin ? '\n\n' : '';
-        $('#issue_description').val(origin + template);
-        try {
-            if (CKEDITOR.instances.issue_description) {
-                CKEDITOR.instances.issue_description.setData(origin + template);
-            }
-        } catch (e) {}
-
-        // note
-        origin = $('#issue_notes').val();
-        origin += origin ? '\n\n' : '';
-        $('#issue_notes').val(origin + template);
-        try {
-            if (CKEDITOR.instances.issue_notes) {
-                CKEDITOR.instances.issue_notes.setData(origin + template);
-            }
-        } catch (e) {}
+        // find out now is new or edit a issue
+        if (window.location.pathname.indexOf('issues/new') !== -1) {
+            // issue description
+            origin = $('#issue_description').val();
+            origin += origin ? '\n\n' : '';
+            $('#issue_description').val(origin + template);
+            try {
+                if (CKEDITOR.instances.issue_description) {
+                    CKEDITOR.instances.issue_description.setData(origin + template);
+                }
+            } catch (e) {}
+        } else {
+            // issue note
+            origin = $('#issue_notes').val();
+            origin += origin ? '\n\n' : '';
+            $('#issue_notes').val(origin + template);
+            try {
+                if (CKEDITOR.instances.issue_notes) {
+                    CKEDITOR.instances.issue_notes.setData(origin + template);
+                }
+            } catch (e) {}
+        }
     });
 
     // edit current template
