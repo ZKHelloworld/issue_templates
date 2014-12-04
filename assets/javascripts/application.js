@@ -15,6 +15,7 @@ $(function($) {
             $('#issue_description').val(origin + template);
             try {
                 if (CKEDITOR.instances.issue_description) {
+                    template = template.split('\n').join('<p>'); // add <p> in every line
                     CKEDITOR.instances.issue_description.setData(origin + template);
                 }
             } catch (e) {}
@@ -25,6 +26,7 @@ $(function($) {
             $('#issue_notes').val(origin + template);
             try {
                 if (CKEDITOR.instances.issue_notes) {
+                    template = template.split('\n').join('<p>'); // add <p> in every line
                     CKEDITOR.instances.issue_notes.setData(origin + template);
                 }
             } catch (e) {}
