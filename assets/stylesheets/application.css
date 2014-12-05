@@ -1,0 +1,8 @@
+.hide {
+    display: none;
+}
+
+#template_insert_button,
+#template_delete_button {
+    cursor: pointer;
+}

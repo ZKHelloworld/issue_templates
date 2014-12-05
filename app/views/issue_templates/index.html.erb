@@ -1,0 +1,33 @@
+<% content_for :header_tags do %>
+    <%= stylesheet_link_tag 'application', :plugin => 'issue_templates' %>
+<% end %>
+<% content_for :header_tags do %>
+    <%= javascript_include_tag 'application', :plugin => 'issue_templates' %>
+<% end %>
+
+<h2><%= l(:issue_templates) %></h2>
+
+<div class="box tabular">
+    <div class="all_attributes">
+        <%= form_for :issue_templates, :url => { :action => 'edit' } do |f| %>
+            <p>
+                <label><%= l(:template_title) %></label>
+                <%= f.select "select", options_for_select( @templates.collect{|t|[t.title,t.id]} ) %>
+                <%= link_to l(:template_new_button), :controller => :issue_templates, :action => :new %>
+                <a id="template_delete_button"><%= l(:template_delete_button)%></a>
+            </p>
+            <ol class="hide">
+                <% @templates.each do |t| %>
+                    <li id="template_content_<%=t.id%>"><%=t.content%></li>
+                <% end %>
+            </ol>
+            <p>
+                <label><%= l(:template_content) %></label>
+                <%= f.text_area :content , :cols => 60, :rows => 10, :no_label => true %>
+            </p>
+            <p>
+                <%= f.submit l(:issue_template_save) %>
+            </p>
+        <% end %>
+    </div>
+</div>
