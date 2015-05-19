@@ -1,11 +1,6 @@
-#h1
-
-##h2
-
-
 ## issue_tempates plugin for redmine
 
-This plugin provides feature to insert template chosen when **create** or **edit** an issue. Templates are either global or project specified.
+This plugin provides feature to insert chosen template when **create** or **edit** an issue. Templates are either global or project specified.
 
 ### Dependencies
 
